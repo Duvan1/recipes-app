@@ -4,7 +4,6 @@ import './RecipeCard.scss';
 
 interface RecipeCardProps {
   title: string;
-  subtitle: string;
   image: string;
   rating: number;
 }

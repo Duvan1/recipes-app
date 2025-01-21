@@ -30,7 +30,6 @@ const RecipeList: React.FC = () => {
           <RecipeCard
             key={recipe.id}
             title={recipe.title}
-            subtitle={recipe.subtitle}
             image={recipe.image}
             rating={recipe.rating}
           />

@@ -7,7 +7,7 @@ const useRecipes = (initialCount: number = 4) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [count, setCount] = useState(initialCount);
+  const [count] = useState(initialCount);
 
   const loadMore = async (additionalCount: number = 4) => {
     try {
