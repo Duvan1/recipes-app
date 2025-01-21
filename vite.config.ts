@@ -6,6 +6,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [ svgr(), react()],
+  base: "/recipes-app/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'), // Alias para la carpeta src
