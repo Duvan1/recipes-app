@@ -1,34 +1,36 @@
+// src/hooks/useRecipes.ts
 import { useEffect, useState } from 'react';
-import api from '../services/api';
+import { fetchRandomRecipes, Recipe } from '../services/recipeService';
 
-interface Recipe {
-  id: number;
-  title: string;
-  image: string;
-}
-
-const useRecipes = () => {
+const useRecipes = (initialCount: number = 4) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [count, setCount] = useState(initialCount);
+
+  const loadMore = async (additionalCount: number = 4) => {
+    try {
+      setLoading(true); // Indicar que estamos cargando más datos
+      const newRecipes = await fetchRandomRecipes(additionalCount);
+      setRecipes((prev) => [...prev, ...newRecipes]); // Añadir recetas a las existentes
+    } catch (err) {
+      console.error('Error fetching recipes:', err);
+      setError('Error al cargar más recetas.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const response = await api.get('recipes/random', {
-          params: { number: 5 },
-        });
-        setRecipes(response.data.recipes);
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
-      } finally {
-        setLoading(false);
-      }
+    const loadInitialRecipes = async () => {
+      await loadMore(count); // Carga inicial
     };
 
-    fetchRecipes();
-  }, []);
+    loadInitialRecipes();
+  }, [count]);
 
-  return { recipes, loading };
+  return { recipes, loading, error, loadMore };
 };
 
 export default useRecipes;

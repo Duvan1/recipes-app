@@ -1,0 +1,41 @@
+// src/components/RecipeList/RecipeList.scss
+.recipe-list {
+  margin: 2rem 0;
+  padding: 0 1rem;
+
+  @media (max-width: 576px) {
+    margin: 10rem 0;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
+    gap: 2rem;
+    justify-items: center;
+
+    @media (max-width: 1396px) {
+      grid-template-columns: repeat(3, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+  }
+}
