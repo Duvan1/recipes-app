@@ -1,7 +1,8 @@
 .recipe-card {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 80%;
+  margin: 0 auto;
 
   &:hover {
     transform: scale(1.1);
