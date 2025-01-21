@@ -9,7 +9,6 @@ const RecipeDetails: React.FC = () => {
 
   useEffect(() => {
     if (id && !isNaN(Number(id)) && (!recipeDetails || recipeDetails.id !== Number(id))) {
-      // Solo cargar si no se tienen los detalles o si el ID es diferente
       getRecipeDetails(id);
     }
   }, [id, recipeDetails, getRecipeDetails]);

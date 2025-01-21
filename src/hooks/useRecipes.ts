@@ -22,7 +22,6 @@ const useRecipes = (initialCount: number = 4) => {
   const dispatch = useDispatch();
   const filter = useSelector((state: RootState) => state.recipes.filter);
 
-  // Cargar recetas
   useEffect(() => {
     const loadRecipes = async () => {
       dispatch(setLoading(true));
@@ -40,7 +39,6 @@ const useRecipes = (initialCount: number = 4) => {
     loadRecipes();
   }, [filter, initialCount, dispatch]);
 
-  // Cargar más recetas
   const loadMore = async (count: number = 4) => {
     setLoadingMore(true);
     try {
@@ -54,11 +52,10 @@ const useRecipes = (initialCount: number = 4) => {
     }
   };
 
-  // Obtener detalles de receta
   const getRecipeDetails = async (id: string) => {
     dispatch(setLoading(true));
     try {
-      const data = await fetchRecipeDetails(id); // Llamada al servicio correcto
+      const data = await fetchRecipeDetails(id);
       setRecipeDetails(data);
     } catch (err) {
       console.error('Error al cargar los detalles de la receta:', err);

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplashScreen Component matches the snapshot 1`] = `
+<div>
+  <div
+    class="splash-screen"
+  >
+    <div
+      class="splash-screen__spinner"
+    />
+  </div>
+</div>
+`;

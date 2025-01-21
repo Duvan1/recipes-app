@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface RecipesState {
-  filter: string; // Parámetro de búsqueda
-  label: string; // Etiqueta del filtro
-  loading: boolean; // Estado de carga global
+  filter: string;
+  label: string;
+  loading: boolean;
 }
 
 const initialState: RecipesState = {
-  filter: '', // Sin filtro por defecto
-  label: 'Todas las Recetas', // Etiqueta por defecto
-  loading: false, // No está cargando por defecto
+  filter: '',
+  label: 'Todas las Recetas',
+  loading: false,
 };
 
 const recipesSlice = createSlice({
@@ -21,7 +21,7 @@ const recipesSlice = createSlice({
       state.label = action.payload.label;
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
-      state.loading = action.payload; // Actualiza el estado de carga
+      state.loading = action.payload;
     },
   },
 });

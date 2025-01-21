@@ -34,11 +34,11 @@
     padding: 0;
 
     @media (max-width: 768px) {
-      display: none; // Oculta en pantallas pequeñas
+      display: none;
     }
 
     @media (min-width: 769px) {
-      display: flex; // Muestra en pantallas grandes
+      display: flex;
     }
   }
 
@@ -47,11 +47,11 @@
     cursor: pointer;
 
     @media (max-width: 768px) {
-      display: flex; // Oculta en pantallas pequeñas
+      display: flex;
     }
 
     @media (min-width: 769px) {
-      display: none; // Muestra en pantallas grandes
+      display: none;
     }
   }
 

@@ -9,11 +9,11 @@ import { RootState } from '../../state/store';
 const Header: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const currentFilter = useSelector((state: RootState) => state.recipes.filter); // Filtro actual
+  const currentFilter = useSelector((state: RootState) => state.recipes.filter);
 
   const handleFilterChange = (filter: string, label: string) => {
-    dispatch(setFilter({ filter, label })); // Actualiza el filtro en el estado global
-    navigate('/'); // Redirige al home
+    dispatch(setFilter({ filter, label }));
+    navigate('/');
   };
 
   return (

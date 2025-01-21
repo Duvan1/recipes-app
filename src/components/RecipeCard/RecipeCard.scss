@@ -1,7 +1,6 @@
-// src/components/RecipeCard/RecipeCard.scss
 .recipe-card {
   position: relative;
-  width: 100%; /* Adaptable al contenedor */
+  width: 100%;
   max-width: 280px;
 
   &:hover {
@@ -13,8 +12,8 @@
     height: 70%;
     margin: 2rem 0;
     justify-content: space-between;
-    background: #f5f9ff; /* Fondo azul claro */
-    box-shadow: 0px 5px 9px rgba(131, 149, 167, 0.4); /* Sombra */
+    background: #f5f9ff;
+    box-shadow: 0px 5px 9px rgba(131, 149, 167, 0.4);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -27,7 +26,7 @@
     &__title {
       font-size: 20px;
       margin: 0;
-      
+
       .text-secondary {
         font-size: 16px;
       }
@@ -38,7 +37,7 @@
       font-size: 14px;
       font-weight: 400;
       margin: 0;
-      color: #425966; /* Azul-gris */
+      color: #425966;
     }
   }
 
@@ -62,13 +61,13 @@
 
   &__image img {
     position: absolute;
-    top: -20px; /* Mover la imagen hacia arriba */
-    left: 50%; /* Centrar la imagen horizontalmente */
-    transform: translateX(-50%); /* Asegurar el centrado */
-    width: 80px; /* Tamaño de la imagen */
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
     height: 80px;
     object-fit: cover;
-    border-radius: 50%; /* Redondeado */
+    border-radius: 50%;
     margin-bottom: 1rem;
   }
 }

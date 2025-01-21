@@ -1,4 +1,3 @@
-// src/components/RecipeList/RecipeList.tsx
 import React, { useState } from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import useRecipes from '../../hooks/useRecipes';
@@ -15,7 +14,7 @@ const RecipeList: React.FC = () => {
 
   const handleLoadMore = async () => {
     setIsLoadingMore(true);
-    await loadMore(DEFAULT_RECIPES_LIMIT); // Cargar 4 recetas adicionales
+    await loadMore(DEFAULT_RECIPES_LIMIT);
     setIsLoadingMore(false);
   };
 

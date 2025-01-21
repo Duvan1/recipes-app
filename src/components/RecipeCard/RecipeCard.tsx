@@ -1,4 +1,3 @@
-// src/components/RecipeCard/RecipeCard.tsx
 import React from 'react';
 import './RecipeCard.scss';
 import { Link } from 'react-router-dom';
@@ -11,11 +10,10 @@ interface RecipeCardProps {
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ id, title, image, rating }) => {
-  // Dividir el título en palabras
   const titleWords = title.split(' ');
   const halfIndex = Math.ceil(titleWords.length / 2);
-  const primaryWords = titleWords.slice(0, halfIndex).join(' '); // Primera mitad
-  const secondaryWords = titleWords.slice(halfIndex).join(' '); // Segunda mitad
+  const primaryWords = titleWords.slice(0, halfIndex).join(' ');
+  const secondaryWords = titleWords.slice(halfIndex).join(' ');
 
   return (
     <Link to={`/recipe/${id}`} className="recipe-card">

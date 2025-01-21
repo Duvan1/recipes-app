@@ -7,14 +7,14 @@
     font-style: normal;
 }
 
-$color-primary: #D84A4A; // Rojo principal
-$color-secondary: #425966; // Azul-gris
+$color-primary: #D84A4A; 
+$color-secondary: #425966; 
 $color-light-blue: #c2e3f3;
 $color-blue: #6aa3c1;
-$color-background: #FFFFFF; // Blanco de fondo
-$color-shadow: rgba(0, 0, 0, 0.1); // Sombra suave
+$color-background: #FFFFFF; 
+$color-shadow: rgba(0, 0, 0, 0.1); 
 
-// Variables de tipografía
+
 $font-family-primary: 'Poppins', sans-serif;
 $font-family-secondary: 'Monster Clubhouse', sans-serif;
 
@@ -22,15 +22,15 @@ $font-size-small: 12px;
 $font-size-medium: 13px;
 $font-size-large: 16px;
 
-// Variables de espaciado
+
 $spacing-small: 0.5rem;
 $spacing-medium: 1rem;
 $spacing-large: 2rem;
 
-// Variables de ancho
+
 $max-width: 100%;
 
-// Clases utilitarias
+
 @mixin flex {
   display: flex;
 }
@@ -58,18 +58,18 @@ $max-width: 100%;
   text-align: right;
 }
 
-// text size
+
 .text-normal {
-    font-weight: 500; // Medium
+    font-weight: 500; 
     font-size: 13px;
 }
 
 .text-medium {
-    font-weight: 500; // Medium
+    font-weight: 500; 
     font-size: 2rem;
 }
 
-// font family
+
 .text-primary {
   font-family: $font-family-primary;
 }
@@ -78,7 +78,7 @@ $max-width: 100%;
   font-family: $font-family-secondary;
 }
 
-// text color
+
 .text-color-primary {
     color: $color-primary;
 }
@@ -98,9 +98,9 @@ ul {
     padding: 0;
 }
 
-// Botones Globales
+
 .button {
-    font-family: $font-family-primary; // Poppins
+    font-family: $font-family-primary; 
     font-size: 16px;
     font-weight: 600;
     padding: 0.5rem 1.5rem;
@@ -115,19 +115,19 @@ ul {
     }
   
     &--primary {
-        background-color: $color-primary; // Rojo principal
+        background-color: $color-primary; 
         color: #ffffff;
         border: none;
       
         &:hover {
-          background-color: color.adjust($color-primary, $lightness: -10%); // Oscurecemos un 10%
+          background-color: color.adjust($color-primary, $lightness: -10%); 
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
       }
   
     &--secondary {
       background-color: transparent;
-      color: $color-secondary; // Azul-gris
+      color: $color-secondary; 
       border: 2px solid $color-secondary;
   
       &:hover {

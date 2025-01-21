@@ -22,7 +22,7 @@
 
     p {
       font-size: 67px;
-      font-family: global.$font-family-secondary; // Monster Clubhouse
+      font-family: global.$font-family-secondary;
       font-weight: normal;
       margin: 0;
     }
@@ -32,13 +32,12 @@
     position: absolute;
     bottom: -15%;
     width: 100%;
-    display: none; /* Ocultamos por defecto */
-    justify-content: center; /* Alinear horizontalmente los contenedores */
+    display: none;
+    justify-content: center;
     gap: global.$spacing-medium;
     margin-top: global.$spacing-large;
 
     @media (max-width: 1024px) {
-      /* Solo se muestra en tablets y smartphones */
       display: flex;
     }
 
@@ -68,10 +67,10 @@
         background: linear-gradient(180deg, #E9F1FA 0%, #FFFFFF 100%);
         box-shadow: 0px 5px 9px rgba(131, 149, 167, 0.4);
         border-radius: 10px;
-        display: flex; /* Flexbox para centrar el contenido */
+        display: flex;
         flex-direction: column;
-        justify-content: center; /* Centrar verticalmente */
-        align-items: center; /* Centrar horizontalmente */
+        justify-content: center;
+        align-items: center;
         text-align: center;
 
         @media (max-width: 576px) {
@@ -84,8 +83,8 @@
         }
   
         .hero-banner__icon {
-          height: 30px; /* Altura de la imagen */
-          margin-bottom: global.$spacing-small; /* Espaciado entre imagen y texto */
+          height: 30px;
+          margin-bottom: global.$spacing-small;
         }
       }
     }

@@ -11,8 +11,8 @@ const HeroBanner: React.FC = () => {
   const navigate = useNavigate();
 
   const handleFilterChange = (filter: string, label: string) => {
-    dispatch(setFilter({ filter, label })); // Actualiza el filtro en el estado global
-    navigate('/'); // Redirige al home
+    dispatch(setFilter({ filter, label }));
+    navigate('/');
   };
 
   return (

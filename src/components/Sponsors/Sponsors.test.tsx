@@ -1,16 +1,28 @@
 import { render, screen } from '@testing-library/react';
-import Sponsors from './Sponsors';
+import Sponsor from './Sponsors';
 
-describe('Sponsors', () => {
-  test('renders the title', () => {
-    render(<Sponsors />);
-    const titleElement = screen.getByText(/Con el Patrocinio de/i);
-    expect(titleElement).toBeInTheDocument();
+jest.mock('../../assets/products.png', () => '/mocked-products.png');
+
+describe('Sponsor Component', () => {
+  it('renders the sponsor title', () => {
+    render(<Sponsor />);
+
+    // Verifica que el título se renderiza correctamente
+    expect(screen.getByText(/Con el Patrocinio de/i)).toBeInTheDocument();
+    expect(screen.getByText(/Con el Patrocinio de/i)).toHaveClass('sponsor__title');
   });
 
-  test('renders all sponsor logos', () => {
-    render(<Sponsors />);
-    const sponsorLogos = screen.getAllByRole('img');
-    expect(sponsorLogos.length).toBe(4); // Ajusta según el número de sponsors
+  it('renders the sponsor image with correct src and alt', () => {
+    render(<Sponsor />);
+
+    // Verifica que la imagen se renderiza con el src y alt correctos
+    const image = screen.getByAltText(/Patrocinadores/i);
+    expect(image).toHaveAttribute('src', '/mocked-products.png');
+    expect(image).toHaveAttribute('alt', 'Patrocinadores');
+  });
+
+  it('matches the snapshot', () => {
+    const { container } = render(<Sponsor />);
+    expect(container).toMatchSnapshot();
   });
 });
