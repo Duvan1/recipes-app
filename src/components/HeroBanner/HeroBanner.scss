@@ -9,7 +9,7 @@
   &__content {
     position: absolute;
     top: 50%;
-    left: global.$spacing-medium;
+    left: 15%;
     transform: translateY(-50%);
     color: #ffffff;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
@@ -47,17 +47,21 @@
     }
 
     ul {
-      flex-wrap: wrap;
-      display: flex;
-      gap: global.$spacing-medium;
-      list-style: none;
       padding: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2rem;
 
       @media (max-width: 576px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 796px) {
         gap: 0.5rem;
       }
 
       li {
+        cursor: pointer;
         position: relative;
         width: 6rem;
         height: 6rem;
@@ -72,7 +76,7 @@
 
         @media (max-width: 576px) {
           width: 7rem;
-        height: 7rem;
+          height: 7rem;
         }
 
         &:hover {

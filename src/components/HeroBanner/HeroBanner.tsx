@@ -1,16 +1,19 @@
 // src/components/HeroBanner/HeroBanner.tsx
 import React from 'react';
 import './HeroBanner.scss';
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../state/recipes/recipesSlice';
+import { NAVIGATION_LINKS } from '../../config/config';
+import { useNavigate } from 'react-router-dom';
 
 const HeroBanner: React.FC = () => {
-  const navItems = [
-    { label: 'Vegetarianos', icon: '../../assets/ic_vegetarianos.svg', href: '#vegetarianos' },
-    { label: 'Principales', icon: '../../assets/ic_principales.svg', href: '#principales' },
-    { label: 'Tortas', icon: '../../assets/ic_tortas.svg', href: '#tortas' },
-    { label: 'Rápida', icon: '../../assets/ic_rapida.svg', href: '#rapida' },
-    { label: 'Menú Niños', icon: '../../assets/ic_menu_ninos.svg', href: '#ninos' },
-    { label: 'Sopas', icon: '../../assets/ic_sopas.svg', href: '#sopas' },
-  ];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleFilterChange = (filter: string, label: string) => {
+    dispatch(setFilter({ filter, label })); // Actualiza el filtro en el estado global
+    navigate('/'); // Redirige al home
+  };
 
   return (
     <section className="hero-banner">
@@ -20,10 +23,10 @@ const HeroBanner: React.FC = () => {
       </div>
       <nav className="hero-banner__nav">
         <ul>
-          {navItems.map((item, index) => (
-            <li key={index}>
+          {NAVIGATION_LINKS.map((item, index) => (
+            <li key={index} onClick={() => handleFilterChange(item.filter, item.label)}>
               <img src={item.icon} alt={item.label} className="hero-banner__icon" />
-              <a href={item.href}>
+              <a>
                 <span className='text-normal text-primary text-color-secondary'>{item.label}</span>
               </a>
             </li>

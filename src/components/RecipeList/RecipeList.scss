@@ -1,10 +1,18 @@
 // src/components/RecipeList/RecipeList.scss
 .recipe-list {
-  margin: 2rem 0;
+  margin: 6rem 0;
   padding: 0 1rem;
 
   @media (max-width: 576px) {
     margin: 10rem 0;
+  }
+
+  &__empty {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #425966;
+    margin-top: 2rem;
   }
 
   &__title {
@@ -24,13 +32,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
     gap: 2rem;
-    justify-items: center;
 
     @media (max-width: 1396px) {
       grid-template-columns: repeat(3, 1fr); /* 2 columnas en pantallas más pequeñas */
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
     }
 

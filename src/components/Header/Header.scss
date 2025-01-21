@@ -11,6 +11,7 @@
   align-items: center;
 
   &__logo {
+    cursor: pointer;
     font-size: 1.8rem;
     font-family: 'Monster Clubhouse', sans-serif;
     text-transform: capitalize;
@@ -41,10 +42,23 @@
     }
   }
 
+  &__home {
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: flex; // Oculta en pantallas pequeñas
+    }
+
+    @media (min-width: 769px) {
+      display: none; // Muestra en pantallas grandes
+    }
+  }
+
   &__nav li a {
+    cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    color: #425966;
     text-decoration: none;
     transition: color 0.2s;
 

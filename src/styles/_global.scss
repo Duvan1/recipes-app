@@ -64,6 +64,11 @@ $max-width: 100%;
     font-size: 13px;
 }
 
+.text-medium {
+    font-weight: 500; // Medium
+    font-size: 2rem;
+}
+
 // font family
 .text-primary {
   font-family: $font-family-primary;

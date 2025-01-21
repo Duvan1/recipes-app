@@ -1,4 +1,3 @@
-// src/services/recipeService.ts
 import axios from 'axios';
 import { API_BASE_URL, API_KEY } from '../config/config';
 
@@ -10,10 +9,36 @@ export interface Recipe {
   rating: number;
 }
 
-export const fetchRandomRecipes = async (count: number = 4): Promise<Recipe[]> => {
+export interface RecipeDetails {
+  id: number;
+  title: string;
+  image: string;
+  summary: string;
+  instructions: string;
+}
+
+export const fetchRecipeDetails = async (id: string): Promise<RecipeDetails> => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/recipes/${id}/information`, {
+      params: {
+        apiKey: API_KEY,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error al obtener los detalles de la receta:', error);
+    throw new Error('No se pudieron cargar los detalles de la receta.');
+  }
+};
+
+export const fetchRandomRecipes = async (count: number = 4, filter: string = ''): Promise<Recipe[]> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/recipes/random`, {
-      params: { apiKey: API_KEY, number: count },
+      params: {
+        apiKey: API_KEY,
+        number: count,
+        tags: filter, // Agregamos el filtro como parámetro "tags"
+      },
     });
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,10 +47,10 @@ export const fetchRandomRecipes = async (count: number = 4): Promise<Recipe[]> =
       title: recipe.title,
       subtitle: recipe.dishTypes?.[0] || 'Unknown',
       image: recipe.image,
-      rating: recipe.spoonacularScore || Math.random() * 5, // Si no hay score, generar uno
+      rating: recipe.spoonacularScore || Math.random() * 5,
     }));
   } catch (error) {
-    console.error('Error fetching random recipes:', error);
+    console.error('Error fetching recipes:', error);
     throw error;
   }
 };
