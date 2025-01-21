@@ -11,8 +11,9 @@ interface RecipeCardProps {
 const RecipeCard: React.FC<RecipeCardProps> = ({ title, image, rating }) => {
   // Dividir el título en palabras
   const titleWords = title.split(' ');
-  const primaryWord = titleWords[0]; // Primera palabra
-  const secondaryWords = titleWords.slice(1).join(' '); // Palabras restantes
+  const halfIndex = Math.ceil(titleWords.length / 2);
+  const primaryWords = titleWords.slice(0, halfIndex).join(' '); // Primera mitad
+  const secondaryWords = titleWords.slice(halfIndex).join(' '); // Segunda mitad
 
   return (
     <div className="recipe-card">
@@ -22,7 +23,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ title, image, rating }) => {
       <div className="recipe-card__bg">
         <div className="recipe-card__content">
           <h3 className="recipe-card__title">
-            <span className="text-primary text-color-primary">{primaryWord}</span>{' '}
+            <span className="text-primary text-color-primary">{primaryWords}</span>{'\n'}
             <span className="text-secondary text-color-primary">{secondaryWords}</span>
           </h3>
         </div>

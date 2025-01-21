@@ -1,25 +1,48 @@
-// src/components/Sponsors/Sponsors.scss
-.sponsors {
-    background-color: #f1f1f1;
-    padding: 2rem 1rem;
+@use '../../styles/_global' as global;
+
+.sponsor {
+  position: relative;
+  width: 100%;
+  height: 167px;
+  background: transparent linear-gradient(180deg, #C2E3F3 0%, #6AA3C1 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 4px 6px 23px rgba(169, 169, 169, 0.07);
+  display: flex;
+  justify-content: space-evenly;
+
+  &__title {
+    font-family: 'Monster Clubhouse', sans-serif;
+    font-size: 56px;
+    line-height: 67px;
+    margin-bottom: 1rem;
     text-align: center;
-  
-    &__title {
-      font-size: 1.8rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-  
-    &__logos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  
-    &__logo {
-      height: 80px;
-      object-fit: contain;
+  }
+
+  &__image {
+    img {
+      max-height: 10rem; /* Ajustar altura máxima */
+      object-fit: contain; /* Asegura que la imagen no se deforme */
     }
   }
-  
+
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 36px; /* Tamaño más pequeño para pantallas medianas */
+      line-height: 44px;
+    }
+
+    &__image img {
+      max-height: 80px; /* Reducir tamaño de la imagen */
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__title {
+      font-size: 28px; /* Tamaño más pequeño para pantallas pequeñas */
+      line-height: 34px;
+    }
+
+    &__image img {
+      max-height: 60px; /* Reducir aún más para pantallas pequeñas */
+    }
+  }
+}

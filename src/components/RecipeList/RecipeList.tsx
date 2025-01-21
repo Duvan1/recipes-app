@@ -4,13 +4,15 @@ import RecipeCard from '../RecipeCard/RecipeCard';
 import useRecipes from '../../hooks/useRecipes';
 import './RecipeList.scss';
 
+const DEFAULT_RECIPES_LIMIT = 12;
+
 const RecipeList: React.FC = () => {
   const { recipes, loading, error, loadMore } = useRecipes(4); // Carga inicial de 4 recetas
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const handleLoadMore = async () => {
     setIsLoadingMore(true);
-    await loadMore(4); // Cargar 4 recetas adicionales
+    await loadMore(DEFAULT_RECIPES_LIMIT); // Cargar 4 recetas adicionales
     setIsLoadingMore(false);
   };
 

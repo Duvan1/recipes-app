@@ -4,12 +4,12 @@ import './HeroBanner.scss';
 
 const HeroBanner: React.FC = () => {
   const navItems = [
-    { label: 'Vegetarianos', icon: 'src/assets/ic_vegetarianos.svg', href: '#vegetarianos' },
-    { label: 'Principales', icon: 'src/assets/ic_principales.svg', href: '#principales' },
-    { label: 'Tortas', icon: 'src/assets/ic_tortas.svg', href: '#tortas' },
-    { label: 'Rápida', icon: 'src/assets/ic_rapida.svg', href: '#rapida' },
-    { label: 'Menú Niños', icon: 'src/assets/ic_menu_ninos.svg', href: '#ninos' },
-    { label: 'Sopas', icon: 'src/assets/ic_sopas.svg', href: '#sopas' },
+    { label: 'Vegetarianos', icon: '../../assets/ic_vegetarianos.svg', href: '#vegetarianos' },
+    { label: 'Principales', icon: '../../assets/ic_principales.svg', href: '#principales' },
+    { label: 'Tortas', icon: '../../assets/ic_tortas.svg', href: '#tortas' },
+    { label: 'Rápida', icon: '../../assets/ic_rapida.svg', href: '#rapida' },
+    { label: 'Menú Niños', icon: '../../assets/ic_menu_ninos.svg', href: '#ninos' },
+    { label: 'Sopas', icon: '../../assets/ic_sopas.svg', href: '#sopas' },
   ];
 
   return (

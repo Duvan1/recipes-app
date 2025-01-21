@@ -3,6 +3,10 @@
   position: relative;
   width: 100%; /* Adaptable al contenedor */
   max-width: 280px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   
   &__bg {
     width: 100%;

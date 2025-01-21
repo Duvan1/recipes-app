@@ -32,10 +32,15 @@
     position: absolute;
     bottom: -15%;
     width: 100%;
-    display: flex;
+    display: none; /* Ocultamos por defecto */
     justify-content: center; /* Alinear horizontalmente los contenedores */
     gap: global.$spacing-medium;
     margin-top: global.$spacing-large;
+
+    @media (max-width: 1024px) {
+      /* Solo se muestra en tablets y smartphones */
+      display: flex;
+    }
 
     @media (max-width: 576px) {
       bottom: -35%;
