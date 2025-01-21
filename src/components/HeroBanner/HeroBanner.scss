@@ -1,0 +1,85 @@
+@use '../../styles/_global' as global;
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url('../../assets/banner.png') center/cover no-repeat;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: global.$spacing-medium;
+    transform: translateY(-50%);
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+
+    h1 {
+      font-size: 74px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 67px;
+      font-family: global.$font-family-secondary; // Monster Clubhouse
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: -15%;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinear horizontalmente los contenedores */
+    gap: global.$spacing-medium;
+    margin-top: global.$spacing-large;
+
+    @media (max-width: 576px) {
+      bottom: -35%;
+    }
+
+    ul {
+      flex-wrap: wrap;
+      display: flex;
+      gap: global.$spacing-medium;
+      list-style: none;
+      padding: 0;
+
+      @media (max-width: 576px) {
+        gap: 0.5rem;
+      }
+
+      li {
+        position: relative;
+        width: 6rem;
+        height: 6rem;
+        background: linear-gradient(180deg, #E9F1FA 0%, #FFFFFF 100%);
+        box-shadow: 0px 5px 9px rgba(131, 149, 167, 0.4);
+        border-radius: 10px;
+        display: flex; /* Flexbox para centrar el contenido */
+        flex-direction: column;
+        justify-content: center; /* Centrar verticalmente */
+        align-items: center; /* Centrar horizontalmente */
+        text-align: center;
+
+        @media (max-width: 576px) {
+          width: 7rem;
+        height: 7rem;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+  
+        .hero-banner__icon {
+          height: 30px; /* Altura de la imagen */
+          margin-bottom: global.$spacing-small; /* Espaciado entre imagen y texto */
+        }
+      }
+    }
+
+  }
+}

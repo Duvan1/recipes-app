@@ -1,0 +1,25 @@
+// src/components/Sponsors/Sponsors.scss
+.sponsors {
+    background-color: #f1f1f1;
+    padding: 2rem 1rem;
+    text-align: center;
+  
+    &__title {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+  
+    &__logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    &__logo {
+      height: 80px;
+      object-fit: contain;
+    }
+  }
+  

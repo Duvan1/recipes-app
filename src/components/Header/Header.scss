@@ -1,0 +1,57 @@
+@use '../../styles/_global' as global;
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__logo {
+    font-size: 1.8rem;
+    font-family: 'Monster Clubhouse', sans-serif;
+    text-transform: capitalize;
+
+    &--recipe {
+      color: #425966;
+    }
+
+    &--app {
+      font-family: global.$font-family-primary;
+      color: #D84A4A;
+    }
+  }
+
+  &__nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      display: none; // Oculta en pantallas pequeñas
+    }
+
+    @media (min-width: 769px) {
+      display: flex; // Muestra en pantallas grandes
+    }
+  }
+
+  &__nav li a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #425966;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover,
+    &.active {
+      color: #D84A4A;
+      font-weight: bold;
+    }
+  }
+}

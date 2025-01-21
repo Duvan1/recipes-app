@@ -1,0 +1,12 @@
+@use '../styles/global' as global;
+
+.main-layout {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    max-width: global.$max-width; // Máximo ancho del contenido
+    overflow-x: hidden; // Evitar desbordamientos horizontales
+  }
+}

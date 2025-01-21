@@ -1,0 +1,11 @@
+// src/pages/Home/Home.scss
+.home {
+    display: flex;
+    flex-direction: column;
+  
+    /* Asegura que los componentes no se solapen */
+    & > *:not(:first-child) {
+      margin-top: 70px; /* Espaciado para compensar el header */
+    }
+  }
+  

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Monster Clubhouse';
+    src: url('../assets/Monster\ Clubhouse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$color-primary: #D84A4A; // Rojo principal
+$color-secondary: #425966; // Azul-gris
+$color-background: #FFFFFF; // Blanco de fondo
+$color-shadow: rgba(0, 0, 0, 0.1); // Sombra suave
+
+// Variables de tipografía
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Monster Clubhouse', sans-serif;
+
+$font-size-small: 12px;
+$font-size-medium: 13px;
+$font-size-large: 16px;
+
+// Variables de espaciado
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+
+// Variables de ancho
+$max-width: 100%;
+
+// Clases utilitarias
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin text-left {
+  text-align: left;
+}
+
+@mixin text-right {
+  text-align: right;
+}
+
+// text size
+.text-normal {
+    font-weight: 500; // Medium
+    font-size: 13px;
+}
+
+// font family
+.text-primary {
+  font-family: $font-family-primary;
+}
+
+.text-secondary {
+  font-family: $font-family-secondary;
+}
+
+// text color
+.text-color-primary {
+    color: $color-primary;
+}
+
+.text-color-secondary {
+    color: $color-secondary;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+

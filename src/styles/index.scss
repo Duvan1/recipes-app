@@ -1,16 +1,6 @@
-// Variables de colores
-$primary-color: #ff5722;
-$secondary-color: #4caf50;
-
-// Reset básico
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@use './components/layout';
+@use './abstracts/variables';
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+    margin: 0;
 }
